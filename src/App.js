@@ -2,13 +2,14 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
 import About from './pages/About';
-import ArticleList from "./pages/ArticleList"
 import Navbar from './Navbar';
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom"
+import ArticleListPage from './pages/ArticleListPage';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
         <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/about" element={<About />}  />
-        <Route path="/article-list" element={<ArticleList />}  />
+        <Route path="/article-list" element={<ArticleListPage />}  />
         <Route path="/article/:name" element={<ArticlePage />}  />
+        <Route path='*' element={<NotFound />}  />
         </Routes>
         </div>
         
